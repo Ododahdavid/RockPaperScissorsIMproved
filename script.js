@@ -2,12 +2,24 @@ let rock = document.querySelector(".rock");
 let paper = document.querySelector(".paper");
 let scissors = document.querySelector(".scissors");
 
+
 let result = document.querySelector(".result");
 let userRock = 0;
 let userPaper = 0;
 let userScissors = 0;
 let computerChoice;
-let computerPick;
+let computerPick = 0;
+let computerScorePage = document.querySelector(".computerScore");
+let userScorePage = document.querySelector(".userScore");
+
+let computerScore = 0;
+let userScore = 0;
+
+computerScorePage.innerText = `Computer = ${computerScore}`;
+userScorePage.innerText = `You = ${userScore}`;
+
+
+
 
 //Function for computer choice process
 
@@ -44,24 +56,58 @@ scissors.addEventListener("click", function () {
 
 function resultProcedure() {
     if (userRock > 0 && computerChoice === 0) {
+
         result.innerText = "Computer chose rock, Its a Tie 😀";
-    } else if (userRock > 0 && computerChoice === 1) {
+        computerScorePage.innerText = `Computer = ${computerScore}`;
+        userScorePage.innerText = `You = ${userScore}`;
+    }
+    else if (userRock > 0 && computerChoice === 1) {
         result.innerText = "Computer chose Paper, You LOSE! ❌";
-    } else if (userRock > 0 && computerChoice === 2) {
+        computerScore += 1;
+        computerScorePage.innerText = `Computer = ${computerScore}`;
+        userScorePage.innerText = `You = ${userScore}`;
+    }
+    else if (userRock > 0 && computerChoice === 2) {
         result.innerText = "Computer chose Scissors, You win! 🎊";
-    } else if (userPaper > 0 && computerChoice === 0) {
+        userScore += 1;
+        computerScorePage.innerText = `Computer = ${computerScore}`;
+        userScorePage.innerText = `You = ${userScore}`;
+    }
+    else if (userPaper > 0 && computerChoice === 0) {
         result.innerText = "Computer chose Rock, You win! 🎊";
-    } else if (userPaper > 0 && computerChoice === 1) {
+        userScore += 1;
+        computerScorePage.innerText = `Computer = ${computerScore}`;
+        userScorePage.innerText = `You = ${userScore}`;
+    }
+    else if (userPaper > 0 && computerChoice === 1) {
         result.innerText = "Computer chose Paper, Its a Tie 😀";
-    } else if (userPaper > 0 && computerChoice === 2) {
+        computerScorePage.innerText = `Computer = ${computerScore}`;
+        userScorePage.innerText = `You = ${userScore}`;
+    }
+    else if (userPaper > 0 && computerChoice === 2) {
         result.innerText = "Computer chose Scissors, You LOSE! ❌";
-    } else if (userScissors > 0 && computerChoice === 0) {
+        computerScore += 1;
+        computerScorePage.innerText = `Computer = ${computerScore}`;
+        userScorePage.innerText = `You = ${userScore}`;
+    }
+    else if (userScissors > 0 && computerChoice === 0) {
         result.innerText = "Computer chose Rock, You LOSE! ❌";
-    } else if (userScissors > 0 && computerChoice === 1) {
+        computerScore += 1;
+        computerScorePage.innerText = `Computer = ${computerScore}`;
+        userScorePage.innerText = `You = ${userScore}`;
+    }
+    else if (userScissors > 0 && computerChoice === 1) {
         result.innerText = "Computer chose Paper, You win! 🎊";
-    } else if (userScissors > 0 && computerChoice === 2) {
+        userScore += 1;
+        computerScorePage.innerText = `Computer = ${computerScore}`;
+        userScorePage.innerText = `You = ${userScore}`;
+    }
+    else if (userScissors > 0 && computerChoice === 2) {
         result.innerText = "Computer chose Scissors, Its a Tie 😀";
-    } else {
+        computerScorePage.innerText = `Computer = ${computerScore}`;
+        userScorePage.innerText = `You = ${userScore}`;
+    }
+    else {
         result.innerText = "Error";
     }
 }
